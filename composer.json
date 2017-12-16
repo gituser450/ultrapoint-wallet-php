@@ -1,0 +1,20 @@
+{
+    "name": "ultrapoint/ultrapoint-php",
+    "description": "A PHP library for the Ultrapoint simplewallet JSON-RPC interface.",
+    "keywords": ["Ultrapoint","Monero", "Poloniex", "cryptocurrency", "Shapeshift"],
+    "homepage": "https://github.com/ultrapoint/ultrapoint-php",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Tindo N. Arsel",
+            "email": "devtnga@gmail.com"
+        }
+    ],
+    "require": {
+        "graze/guzzle-jsonrpc": "^3.2"
+    },
+    "autoload": {
+        "psr-4": {"Ultrapoint\\":"src/"}
+    }
+}
