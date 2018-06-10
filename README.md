@@ -86,7 +86,7 @@ Returns an object with `error` field if unsuccessful.
 $balance = $wallet->getBalance();
 ```
 
-Responds with the current balance and unlocked (spendable) balance of the wallet in atomic units. Divide by 1e8 to convert.
+Responds with the current balance and unlocked (spendable) balance of the wallet in atomic units. Divide by 1e9 to convert.
     
 Example response: 
 

@@ -60,11 +60,11 @@ class Wallet
         $destinations = $options['destinations'];
         // Convert Ultrapoint amount to atomic units
         if(gettype($destinations) == "object"){
-            $destinations->amount = $destinations->amount * 1e8;
+            $destinations->amount = $destinations->amount * 1e9;
             $destinations = array($destinations);
         } else {
             foreach ($destinations as &$destination){
-                $destination->amount = $destination->amount * 1e8;
+                $destination->amount = $destination->amount * 1e9;
             }
         }
         // Define Mixin
