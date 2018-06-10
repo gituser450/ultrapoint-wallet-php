@@ -10,6 +10,8 @@ class Wallet
      * Wallet constructor.
      * @param string $hostname
      * @param int $port
+     * @param string $username
+     * @param string $password
      */
     function __construct($hostname = 'http://127.0.0.1', $port = 17092, $username='', $password='')
     {
@@ -90,7 +92,7 @@ class Wallet
             'do_not_relay' => $do_not_relay,
             'priority' => $priority,
             'get_tx_hex' => $get_tx_hex,
-            'get_tx_key' => $get_tx_key,
+            'get_tx_key' => $get_tx_key
         ];
         // Set algorithm type if using transfer_split method
         if($options['method'] == "transfer_split"){

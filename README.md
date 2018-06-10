@@ -14,6 +14,37 @@ Install the library using Composer.
     
     composer require ultrapoint/ultrapoint-wallet
 
+## Run an Instance of the RPC Wallet
+
+For internal communication through library and RPC wallet, following options are optional:
+
+```bash
+--rpc-bind-port
+--rpc-bind-ip
+--daemon-host
+--confirm-external-bind
+```
+
+**Note**: more informations can be found using `--help` option.
+
+### Without authentification
+
+```bash
+ultrapoint-wallet-rpc --password "$wallet_password" --wallet-file $wallet_filepath --rpc-bind-port 19092 --rpc-bind-ip $external_ip --daemon-host $external_ip --confirm-external-bind --disable-rpc-login
+```
+
+### With authentification
+
+```bash
+ultrapoint-wallet-rpc --password "$wallet_password" --wallet-file $wallet_filepath --rpc-bind-port 19092 --rpc-bind-ip $external_ip --daemon-host $external_ip --confirm-external-bind --rpc-login 'ditrpc_user:rpc_password'
+```
+
+### Multi-wallets usage
+
+```bash
+ultrapoint-wallet-rpc --password "$wallet_password" --wallet-file $wallet_filepath --rpc-bind-port 19092 --rpc-bind-ip $external_ip --daemon-host $external_ip --confirm-external-bind --rpc-login 'ditrpc_user:rpc_password' --wallet-dir $wallet_dirpath
+```
+
 ## Create an Instance of the Wallet
 
 ```php
@@ -30,11 +61,13 @@ To connect to an external IP or different port:
 ```php
 $hostname = YOUR_WALLET_RPC_IP;
 $port = YOUR_WALLET_RPC_PORT;
+
 $wallet = new Ultrapoint\Wallet($hostname, $port);
 
 # or with rpc authentification needed
 $username = YOUR_WALLET_RPC_USERNAME;
 $password = YOUR_WALLET_RPC_PASSWORD;
+
 $wallet = new Ultrapoint\Wallet($hostname, $port, $username, $password);
 
 ```
@@ -192,7 +225,7 @@ Example response:
 { tx_hash_list: [ '<75c666fc96120a643321a5e76c0376b40761582ee40cc4917e8d1379a2c8ad9f>' ] }
 ```
 
-### sweep_all
+### sweepAll
 Usage:
 
 ```
