@@ -1,6 +1,6 @@
 # Ultrapoint-PHP
 
-A PHP library for the Ultrapoint `simplewallet` JSON-RPC interface. 
+A PHP library for the `ultrapoint-wallet-rpc` interface. 
 
 For more information about Ultrapoint, please visit https://ultrapoint.org.
 
@@ -305,4 +305,4 @@ Example response:
 $wallet->stopWallet();
 ```
 
-Cleanly shuts down the current simplewallet process.
+Cleanly shuts down the current ultrapoint-wallet-rpc process.

@@ -1,7 +1,17 @@
 {
     "name": "ultrapoint/ultrapoint-php",
-    "description": "A PHP library for the Ultrapoint simplewallet JSON-RPC interface.",
-    "keywords": ["Ultrapoint","Monero", "Poloniex", "cryptocurrency", "Shapeshift"],
+    "description": "A PHP library for the ultrapoint-wallet-rpc interface.",
+    "keywords": [
+        "Ultrapoint", 
+        "ultrapoint-wallet-rpc", 
+        "bitcoin", 
+        "monero", 
+        "blockchain", 
+        "php", 
+        "Poloniex", 
+        "cryptocurrency", 
+        "Shapeshift"
+    ],
     "homepage": "https://github.com/ultrapoint/ultrapoint-php",
     "type": "library",
     "license": "MIT",
