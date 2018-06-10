@@ -35,6 +35,51 @@ $wallet = new Ultrapoint\Wallet($hostname, $port);
 
 ## Wallet Methods
 
+### create_wallet
+Usage:
+
+```
+Wallet.create_wallet('upx_wallet', 'ultrapoint', 'English');
+```
+
+Creates a new wallet.
+    
+Parameters:
+
+* `filename` - filename of wallet to create (*string*)
+* `password` - wallet password (*string*)
+* `language` - language to use for mnemonic phrase (*string*)
+
+Example response: 
+
+```
+{}
+```
+
+Returns an object with `error` field if unsuccessful.
+
+### open_walllet
+Usage:
+
+```
+Wallet.open_wallet('upx_wallet', 'ultrapoint');
+```
+
+Opens a wallet.
+    
+Parameters:
+
+* `filename` - filename of wallet to open (*string*)
+* `password` -wallet password (*string*)
+
+Example response: 
+
+```
+{}
+```
+
+Returns an object with `error` field if unsuccessful.
+
 ### getBalance
 
 ```php
@@ -136,6 +181,22 @@ Example response:
 ```
 { tx_hash_list: [ '<75c666fc96120a643321a5e76c0376b40761582ee40cc4917e8d1379a2c8ad9f>' ] }
 ```
+
+### sweep_all
+Usage:
+
+```
+$tx_hashes = $wallet->sweepAll('7Dty8AeoNi3CgvYRH7rpEoQVRrkCETSdrKAdPE3kVTyYjmh21iiw48z5HEj5nGub1y9pVLLx8gZmwGNKRuLLtaMSLe9QdWx');
+```
+
+Sends all spendable outputs to the specified address. Responds with a list of the corresponding transaction hashes.
+
+Example response:
+
+```
+{ tx_hash_list: [ '<75c666fc96120a643321a5e76c0376b40761582ee40cc4917e8d1379a2c8ad9f>' ] }
+```
+
 
 ### getPayments
 
