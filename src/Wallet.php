@@ -73,12 +73,24 @@ class Wallet
         $unlock_time = (isset($options['unlock_time']) ? $options['unlock_time'] : 0);
         // Define Payment ID
         $payment_id = (isset($options['payment_id']) ? $options['payment_id'] : null);
+        // Define if have to Do Not Relay
+        $do_not_relay = (isset($options['do_not_relay']) ? $options['do_not_relay'] : false);
+        // Define Priority
+        $priority = (isset($options['priority']) ? $options['priority'] : 0);
+        // Define if have to Get Transaction Hex hash
+        $get_tx_hex = (isset($options['get_tx_hex']) ? $options['get_tx_hex'] : false);
+        // Define if have to Get Transaction Key hash
+        $get_tx_key = (isset($options['get_tx_key']) ? $options['get_tx_key'] : false);
         // Build params array
         $params = [
             'destinations' => $destinations,
             'mixin' => $mixin,
             'unlock_time' => $unlock_time,
-            'payment_id' => $payment_id
+            'payment_id' => $payment_id,
+            'do_not_relay' => $do_not_relay,
+            'priority' => $priority,
+            'get_tx_hex' => $get_tx_hex,
+            'get_tx_key' => $get_tx_key,
         ];
         // Set algorithm type if using transfer_split method
         if($options['method'] == "transfer_split"){

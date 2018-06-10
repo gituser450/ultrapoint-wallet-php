@@ -73,8 +73,23 @@ Transfers Ultrapoint to a single recipient OR a group of recipients in a single 
 
 Parameters:
 
-* `options` - an array containing `destinations` (object OR array of objects), `mixin` (int), `unlock_time` (int), `payment_id` (string). Only `destinations` is required. Default mixin value is 4.
+* `options` - an array containing: 
 
+```php
+[
+    'destinations' => (object OR array of objects)
+    'mixin' => (*int*), // amount of existing transaction outputs to mix yours with (default is 4)
+    'unlockTime' => (*int*), // number of blocks before tx is spendable (default is 0)
+    'pid' => (*string*) // optional payment ID (a 64 character hexadecimal string used for identifying the sender of a payment)
+    'payment_id' => (*string*) // optional payment ID (a 64 character hexadecimal string used for identifying the sender of a payment)
+    'do_not_relay' => (*boolean*) // optional boolean used to indicate whether a transaction should be relayed or not
+    'priority' => (*int*) // optional transaction priority
+    'get_tx_hex' => (*boolean*) // optional boolean used to indicate that the transaction should be returned as hex string after sending
+    'get_tx_key' => (*boolean*) // optional boolean used to indicate that the transaction key should be returned after sending
+]
+```
+
+Example request:
 ```php
 $options = [
     'destinations' => (object) [
