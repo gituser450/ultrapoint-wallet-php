@@ -292,7 +292,7 @@ class Wallet
      * @param string $language
      * @return string
      */
-    public function create_wallet ($filename='upx_wallet', $password='ultrapoint', $language='English') {
+    public function createWallet ($filename='upx_wallet', $password='ultrapoint', $language='English') {
         $body = [
             'method' => 'create_wallet',
             'params' => [
@@ -310,7 +310,7 @@ class Wallet
      * @param string $password
      * @return string
      */
-    public function open_wallet ($filename='upx_wallet', $password='ultrapoint') {
+    public function openWallet ($filename='upx_wallet', $password='ultrapoint') {
         $body = [
         'method' => 'open_wallet',
             'params' => [

@@ -8,8 +8,8 @@ $wallet = new Ultrapoint\Wallet();
 // $wallet = new Ultrapoint\Wallet('127.0.0.1', 17072, 'upxrpcuser', 'rpcpasswd');
 
 # used when rpc wallet is started with `--wallet-dir` option
-// echo $wallet->create_wallet('upx_testy', 'testy');
-// echo $wallet->open_wallet('upx_testy', 'testy');
+// echo $wallet->createWallet('upx_testy', 'testy');
+// echo $wallet->openWallet('upx_testy', 'testy');
 
 $destination1 = (object) [
     'amount' => '1',

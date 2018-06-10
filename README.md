@@ -1,4 +1,4 @@
-# Ultrapoint-PHP
+# Ultrapoint-Wallet-PHP
 
 A PHP library for the `ultrapoint-wallet-rpc` interface. 
 
@@ -12,7 +12,7 @@ UP: `7Ey8jHDkWqYDSpoSssv5EmAcsXCct4hum4mhHxT6ruaof9C7JM1ekjsYFa8dQEUL4QMai15akL2
 
 Install the library using Composer.
     
-    composer require ultrapoint/ultrapoint-php
+    composer require ultrapoint/ultrapoint-wallet-php
 
 ## Create an Instance of the Wallet
 
@@ -35,7 +35,7 @@ $wallet = new Ultrapoint\Wallet($hostname, $port);
 
 ## Wallet Methods
 
-### create_wallet
+### createWallet
 Usage:
 
 ```
@@ -58,7 +58,7 @@ Example response:
 
 Returns an object with `error` field if unsuccessful.
 
-### open_walllet
+### openWalllet
 Usage:
 
 ```
@@ -262,7 +262,7 @@ Parameters:
 Example response:
 
 ```
-{ integrated_address: '4HCSju123guax69cVdqVP5APVLkcxxjjXdcP9fJWZdNc5mEpn3fXQY1CFmJDvyUXzj2Fy9XafvUgMbW91ZoqwqmQ96NYBVqEd6JAu9j3gk' }
+{ integrated_address: '7HCSju123guax69cVdqVP5APVLkcxxjjXdcP9fJWZdNc5mEpn3fXQY1CFmJDvyUXzj2Fy9XafvUgMbW91ZoqwqmQ96NYBVqEd6JAu9j3gk' }
 ```
 
 ### splitIntegrated
