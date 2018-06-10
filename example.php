@@ -5,7 +5,7 @@ use Ultrapoint\Wallet;
 
 $wallet = new Ultrapoint\Wallet();
 # or with rpc authentification needed
-// $wallet = new Ultrapoint\Wallet('127.0.0.1', 17072, 'upxrpcuser', 'rpcpasswd');
+// $wallet = new Ultrapoint\Wallet('127.0.0.1', 17092, 'upxrpcuser', 'rpcpasswd');
 
 # used when rpc wallet is started with `--wallet-dir` option
 // echo $wallet->createWallet('upx_testy', 'testy');

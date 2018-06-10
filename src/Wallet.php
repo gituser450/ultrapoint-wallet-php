@@ -11,7 +11,7 @@ class Wallet
      * @param string $hostname
      * @param int $port
      */
-    function __construct($hostname = 'http://127.0.0.1', $port = 17072, $username='', $password='')
+    function __construct($hostname = 'http://127.0.0.1', $port = 17092, $username='', $password='')
     {
         $this->client = new Client([
             // Base URI is used with relative requests

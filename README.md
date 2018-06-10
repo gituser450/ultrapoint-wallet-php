@@ -23,7 +23,7 @@ use Ultrapoint\Wallet;
 $wallet = new Ultrapoint\Wallet();
 ```
 
-Default hostname and port connects to http://127.0.0.1:17072.
+Default hostname and port connects to http://127.0.0.1:17092.
 
 To connect to an external IP or different port:
 
