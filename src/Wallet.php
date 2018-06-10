@@ -2,7 +2,7 @@
 
 namespace Ultrapoint;
 
-use Graze\GuzzleHttp\JsonRpc\Client;
+use GuzzleHttp\Client;
 
 class Wallet
 {
@@ -11,10 +11,16 @@ class Wallet
      * @param string $hostname
      * @param int $port
      */
-    function __construct($hostname = 'http://127.0.0.1', $port = 17072)
+    function __construct($hostname = 'http://127.0.0.1', $port = 17072, $username='', $password='')
     {
-        $url = $hostname.':'.$port .'/json_rpc';
-        $this->client = Client::factory($url);
+        $this->client = new Client([
+            // Base URI is used with relative requests
+            'base_uri' => $hostname.':'.$port .'/json_rpc',
+            // You can set any number of default request options.
+            'timeout'  => 15.0,
+            'headers' => ['Content-type' => 'application/json'],
+            'auth' => [$username, $password, 'digest']
+        ]);
     }
 
     /**
@@ -24,17 +30,23 @@ class Wallet
      */
     public function _request($body)
     {
-        if(isset($body['params'])){
-            $response = $this->client->send($this->client->request(0, $body['method'], $body['params']));
-        } else {
-            $response = $this->client->send($this->client->request(0, $body['method']));
+        $body['jsonrpc'] = '2.0';
+        $body['id'] = '0';
+
+        try {
+            $response = $this->client->request('POST', '', ['body' => json_encode($body)]);
+        } catch (Exception $e) {
+            return $e->getMessage();
         }
+
         $response = json_decode($response->getBody());
         // if there is an error, return the error message otherwise respond with result
-        if(property_exists($response, 'error')){
+        if(property_exists($response, 'error')) {
             return json_encode($response->error);
-        } else {
+        } else if (property_exists($response, 'result')) {
             return json_encode($response->result);
+        } else {
+            return json_encode(['error' => ['message' => 'Oops, unexpected response from RPC wallet !']]);
         }
     }
 
