@@ -6,13 +6,13 @@ For more information about Ultrapoint, please visit https://ultrapoint.org.
 
 If you found this useful, feel free to donate!
 
-UP: `7Ey8jHDkWqYDSpoSssv5EmAcsXCct4hum4mhHxT6ruaof9C7JM1ekjsYFa8dQEUL4QMai15akL2az2Me48ShgNMWV3yBkSV`
+UPX: `7Ey8jHDkWqYDSpoSssv5EmAcsXCct4hum4mhHxT6ruaof9C7JM1ekjsYFa8dQEUL4QMai15akL2az2Me48ShgNMWV3yBkSV`
 
 ## Installation
 
 Install the library using Composer.
     
-    composer require ultrapoint/ultrapoint-wallet-php
+    composer require ultrapoint/ultrapoint-wallet
 
 ## Create an Instance of the Wallet
 
@@ -28,9 +28,15 @@ Default hostname and port connects to http://127.0.0.1:17092.
 To connect to an external IP or different port:
 
 ```php
-$hostname = YOUR_WALLET_IP;
-$port = YOUR_WALLET_PORT;
+$hostname = YOUR_WALLET_RPC_IP;
+$port = YOUR_WALLET_RPC_PORT;
 $wallet = new Ultrapoint\Wallet($hostname, $port);
+
+# or with rpc authentification needed
+$username = YOUR_WALLET_RPC_USERNAME;
+$password = YOUR_WALLET_RPC_PASSWORD;
+$wallet = new Ultrapoint\Wallet($hostname, $port, $username, $password);
+
 ```
 
 ## Wallet Methods
@@ -38,8 +44,10 @@ $wallet = new Ultrapoint\Wallet($hostname, $port);
 ### createWallet
 Usage:
 
-```
-Wallet.create_wallet('upx_wallet', 'ultrapoint', 'English');
+```php
+# used when rpc wallet is started with `--wallet-dir` option
+
+$wallet->createWallet('upx_wallet', 'ultrapoint', 'English');
 ```
 
 Creates a new wallet.
@@ -61,8 +69,10 @@ Returns an object with `error` field if unsuccessful.
 ### openWalllet
 Usage:
 
-```
-Wallet.open_wallet('upx_wallet', 'ultrapoint');
+```php
+# used when rpc wallet is started with `--wallet-dir` option
+
+$wallet->openWallet('upx_wallet', 'ultrapoint');
 ```
 
 Opens a wallet.
