@@ -1,5 +1,5 @@
 {
-    "name": "ultrapoint/ultrapoint-php",
+    "name": "ultrapoint/ultrapoint-wallet",
     "description": "A PHP library for the ultrapoint-wallet-rpc interface.",
     "keywords": [
         "Ultrapoint", 
@@ -12,7 +12,7 @@
         "cryptocurrency", 
         "Shapeshift"
     ],
-    "homepage": "https://github.com/ultrapoint/ultrapoint-php",
+    "homepage": "https://github.com/ultrapoint/ultrapoint-wallet-php",
     "type": "library",
     "license": "MIT",
     "authors": [
