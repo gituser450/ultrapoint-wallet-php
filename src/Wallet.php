@@ -262,7 +262,7 @@ class Wallet
      * @param string $payment_id
      * @return string
      */
-    public function integratedAddress($payment_id = null)
+    public function makeIntegratedAddress($payment_id = null)
     {
         $params = ['payment_id' => $payment_id];
         $body = [
