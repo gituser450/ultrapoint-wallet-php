@@ -19,7 +19,7 @@ class Wallet
             // Base URI is used with relative requests
             'base_uri' => $hostname.':'.$port .'/json_rpc',
             // You can set any number of default request options.
-            'timeout'  => 15.0,
+            'timeout'  => 30.0,
             'headers' => ['Content-type' => 'application/json'],
             'auth' => [$username, $password, 'digest']
         ]);
